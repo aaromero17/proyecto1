@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+        <body>
+            {% include "superior/barra.html" %}
+        <h1>
+        Primera plantilla
+        </h1>
+        {# Aparese solo si es el profesor titular #}
+
+        {% comment %}
+            comentario
+            de 
+            varias 
+            lineas
+        {% endcomment %}
+
+        {% if nombre_persona == "Alex" %}
+            <p>Profresor titular</p>
+        {% endif %}
+
+
+        <p>El nombre del profesor es: {{nombre_persona}} {{apellido_persona}}</p>
+        <p>El dia actual es: {{ahora.day}}</p>
+        <p>El mes actual es: {{ahora.month}}</p>
+        <p>El a&ntilde;o actual es: {{ahora.year}}</p>
+        <p>La hora actual es: {{ahora.time}}</p>
+        <p>La fecha actual es: {{ahora}}</p>
+        <p>Temas del curso</p>
+        <p>
+            <ul>
+                {% if temas %}
+                    {% for elemento in temas %}
+                   
+        
+                        <li>{{elemento}}</li>
+
+                    
+                    {% endfor %}
+                    
+                    {% else %}      
+                
+                    <p>No existen temas</p>
+                {% endif %}
+            </ul>
+        </p>
+        </body>
+        
+        </html>
+    
+</body>
+</html>
